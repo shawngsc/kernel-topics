@@ -5,7 +5,7 @@
 
 /dts-v1/;
 
-#include "nord.dtsi"
+#include "nord-iot.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Nord EVK";
