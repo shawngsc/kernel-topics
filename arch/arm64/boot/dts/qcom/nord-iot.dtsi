@@ -233,8 +233,8 @@
 		};
 	};
 
-	tcsr: clock-controller@f1d9000 {
-		compatible = "qcom,nord-tcsr", "syscon";
+	tcsrcc: clock-controller@f1d9000 {
+		compatible = "qcom,nord-tcsrcc", "syscon";
 		reg = <0x0 0x0f1d9000 0x0 0xf00c>;
 		clocks = <&rpmhcc RPMH_CXO_CLK>;
 		#clock-cells = <1>;
