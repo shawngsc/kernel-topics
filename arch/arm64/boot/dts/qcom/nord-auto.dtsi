@@ -1,0 +1,438 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include "nord.dtsi"
+#include "scmi-common.dtsi"
+
+&soc {
+	qupv3_2: geniqup@8c0000 {
+		compatible = "qcom,nord-auto-geni-se-qup",
+			     "qcom,sa8255p-geni-se-qup";
+
+		uart15: serial@884000 {
+			compatible = "qcom,nord-auto-geni-debug-uart",
+				     "qcom,sa8255p-geni-debug-uart";
+			power-domains = <&scmi11_pd 15>,
+					<&scmi11_dvfs 15>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart17: serial@88c000 {
+			compatible = "qcom,nord-auto-geni-uart",
+				     "qcom,sa8255p-geni-uart";
+			power-domains = <&scmi11_pd 17>,
+					<&scmi11_dvfs 17>;
+			power-domain-names = "power",
+					     "perf";
+		};
+	};
+
+	qupv3_0: geniqup@9c0000 {
+		compatible = "qcom,nord-auto-geni-se-qup",
+			     "qcom,sa8255p-geni-se-qup";
+
+		uart0: serial@980000 {
+			compatible = "qcom,nord-auto-geni-uart",
+				     "qcom,sa8255p-geni-uart";
+			power-domains = <&scmi11_pd 0>,
+					<&scmi11_dvfs 0>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart3: serial@98c000 {
+			compatible = "qcom,nord-auto-geni-uart",
+				     "qcom,sa8255p-geni-uart";
+			power-domains = <&scmi11_pd 3>,
+					<&scmi11_dvfs 3>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart4: serial@990000 {
+			compatible = "qcom,nord-auto-geni-uart",
+				     "qcom,sa8255p-geni-uart";
+			power-domains = <&scmi11_pd 4>,
+					<&scmi11_dvfs 4>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart5: serial@994000 {
+			compatible = "qcom,nord-auto-geni-uart",
+				     "qcom,sa8255p-geni-uart";
+			power-domains = <&scmi11_pd 5>,
+					<&scmi11_dvfs 5>;
+			power-domain-names = "power",
+					     "perf";
+		};
+	};
+
+	qupv3_1: geniqup@ac0000 {
+		compatible = "qcom,nord-auto-geni-se-qup",
+			     "qcom,sa8255p-geni-se-qup";
+
+		uart9: serial@a88000 {
+			power-domains = <&scmi11_pd 9>,
+					<&scmi11_dvfs 9>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart10: serial@a8c000 {
+			power-domains = <&scmi11_pd 10>,
+					<&scmi11_dvfs 10>;
+			power-domain-names = "power",
+					     "perf";
+		};
+
+		uart12: serial@a94000 {
+			power-domains = <&scmi11_pd 12>,
+					<&scmi11_dvfs 12>;
+			power-domain-names = "power",
+					     "perf";
+		};
+	};
+
+	ufshc_mem_hc: ufshc@1d44000 {
+		compatible = "qcom,nord-auto-ufshc",
+			     "qcom,sa8255p-ufshc";
+		msi-parent = <&gic_its 0x14c0>;
+		power-domains = <&scmi3_pd 0>;
+	};
+
+	adreno_smmu_0: iommu@3da0000 {
+		power-domains = <&scmi15_pd 0>;
+	};
+
+	scmichannels: sram@d7600000 {
+		compatible = "mmio-sram";
+		reg = <0x0 0xd7600000 0x0 0x40000>;
+		ranges = <0x0 0x0 0x0 0xffffffff>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		shmem0: scmi-sram@d7600000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7600000 0x1000>;
+		};
+
+		shmem1: scmi-sram@d7601000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7601000 0x1000>;
+		};
+
+		shmem2: scmi-sram@d7602000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7602000 0x1000>;
+		};
+
+		shmem3: scmi-sram@d7603000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7603000 0x1000>;
+		};
+
+		shmem4: scmi-sram@d7604000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7604000 0x1000>;
+		};
+
+		shmem5: scmi-sram@d7605000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7605000 0x1000>;
+		};
+
+		shmem6: scmi-sram@d7606000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7606000 0x1000>;
+		};
+
+		shmem7: scmi-sram@d7607000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7607000 0x1000>;
+		};
+
+		shmem8: scmi-sram@d7608000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7608000 0x1000>;
+		};
+
+		shmem9: scmi-sram@d7609000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7609000 0x1000>;
+		};
+
+		shmem10: scmi-sram@d760a000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760a000 0x1000>;
+		};
+
+		shmem11: scmi-sram@d760b000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760b000 0x1000>;
+		};
+
+		shmem12: scmi-sram@d760c000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760c000 0x1000>;
+		};
+
+		shmem13: scmi-sram@d760d000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760d000 0x1000>;
+		};
+
+		shmem14: scmi-sram@d760e000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760e000 0x1000>;
+		};
+
+		shmem15: scmi-sram@d760f000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd760f000 0x1000>;
+		};
+
+		shmem16: scmi-sram@d7610000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7610000 0x1000>;
+		};
+
+		shmem17: scmi-sram@d7611000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7611000 0x1000>;
+		};
+
+		shmem18: scmi-sram@d7612000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7612000 0x1000>;
+		};
+
+		shmem19: scmi-sram@d7613000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7613000 0x1000>;
+		};
+
+		shmem20: scmi-sram@d7614000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7614000 0x1000>;
+		};
+
+		shmem21: scmi-sram@d7615000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7615000 0x1000>;
+		};
+
+		shmem22: scmi-sram@d7616000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7616000 0x1000>;
+		};
+
+		shmem23: scmi-sram@d7617000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7617000 0x1000>;
+		};
+
+		shmem24: scmi-sram@d7618000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7618000 0x1000>;
+		};
+
+		shmem25: scmi-sram@d7619000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7619000 0x1000>;
+		};
+
+		shmem26: scmi-sram@d761a000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761a000 0x1000>;
+		};
+
+		shmem27: scmi-sram@d761b000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761b000 0x1000>;
+		};
+
+		shmem28: scmi-sram@d761c000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761c000 0x1000>;
+		};
+
+		shmem29: scmi-sram@d761d000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761d000 0x1000>;
+		};
+
+		shmem30: scmi-sram@d761e000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761e000 0x1000>;
+		};
+
+		shmem31: scmi-sram@d761f000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd761f000 0x1000>;
+		};
+
+		shmem32: scmi-sram@d7620000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7620000 0x1000>;
+		};
+
+		shmem33: scmi-sram@d7621000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7621000 0x1000>;
+		};
+
+		shmem34: scmi-sram@d7622000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7622000 0x1000>;
+		};
+
+		shmem35: scmi-sram@d7623000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7623000 0x1000>;
+		};
+
+		shmem36: scmi-sram@d7624000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7624000 0x1000>;
+		};
+
+		shmem37: scmi-sram@d7625000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7625000 0x1000>;
+		};
+
+		shmem38: scmi-sram@d7626000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7626000 0x1000>;
+		};
+
+		shmem39: scmi-sram@d7627000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7627000 0x1000>;
+		};
+
+		shmem40: scmi-sram@d7628000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7628000 0x1000>;
+		};
+
+		shmem41: scmi-sram@d7629000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7629000 0x1000>;
+		};
+
+		shmem42: scmi-sram@d762a000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762a000 0x1000>;
+		};
+
+		shmem43: scmi-sram@d762b000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762b000 0x1000>;
+		};
+
+		shmem44: scmi-sram@d762c000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762c000 0x1000>;
+		};
+
+		shmem45: scmi-sram@d762d000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762d000 0x1000>;
+		};
+
+		shmem46: scmi-sram@d762e000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762e000 0x1000>;
+		};
+
+		shmem47: scmi-sram@d762f000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd762f000 0x1000>;
+		};
+
+		shmem48: scmi-sram@d7630000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7630000 0x1000>;
+		};
+
+		shmem49: scmi-sram@d7631000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7631000 0x1000>;
+		};
+
+		shmem50: scmi-sram@d7632000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7632000 0x1000>;
+		};
+
+		shmem51: scmi-sram@d7633000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7633000 0x1000>;
+		};
+
+		shmem52: scmi-sram@d7634000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7634000 0x1000>;
+		};
+
+		shmem53: scmi-sram@d7635000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7635000 0x1000>;
+		};
+
+		shmem54: scmi-sram@d7636000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7636000 0x1000>;
+		};
+
+		shmem55: scmi-sram@d7637000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7637000 0x1000>;
+		};
+
+		shmem56: scmi-sram@d7638000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7638000 0x1000>;
+		};
+
+		shmem57: scmi-sram@d7639000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd7639000 0x1000>;
+		};
+
+		shmem58: scmi-sram@d763a000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763a000 0x1000>;
+		};
+
+		shmem59: scmi-sram@d763b000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763b000 0x1000>;
+		};
+
+		shmem60: scmi-sram@d763c000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763c000 0x1000>;
+		};
+
+		shmem61: scmi-sram@d763d000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763d000 0x1000>;
+		};
+
+		shmem62: scmi-sram@d763e000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763e000 0x1000>;
+		};
+
+		shmem63: scmi-sram@d763f000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0xd763f000 0x1000>;
+		};
+	};
+};
