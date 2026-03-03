@@ -4048,5 +4048,70 @@
 				#msi-cells = <1>;
 			};
 		};
+
+		memtimer: timer@17810000 {
+			compatible = "arm,armv7-timer-mem";
+			reg = <0x0 0x17810000 0x0 0x1000>;
+			ranges = <0x0 0x0 0x0 0x20000000>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			frame@17811000 {
+				reg = <0x17811000 0x1000>,
+				      <0x17812000 0x1000>;
+				interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>,
+					     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <0>;
+			};
+
+			frame@17813000 {
+				reg = <0x17813000 0x1000>;
+				interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <1>;
+				status = "disabled";
+			};
+
+			frame@17815000 {
+				reg = <0x17815000 0x1000>;
+				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <2>;
+				status = "disabled";
+			};
+
+			frame@17817000 {
+				reg = <0x17817000 0x1000>;
+				interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <3>;
+				status = "disabled";
+			};
+
+			frame@17819000 {
+				reg = <0x17819000 0x1000>;
+				interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <4>;
+				status = "disabled";
+			};
+
+			frame@1781b000 {
+				reg = <0x1781b000 0x1000>;
+				interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <5>;
+				status = "disabled";
+			};
+
+			frame@1781d000 {
+				reg = <0x1781d000 0x1000>;
+				interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+				frame-number = <6>;
+				status = "disabled";
+			};
+		};
+
+		watchdog@17826000 {
+			compatible = "qcom,kpss-wdt";
+			reg = <0x0 0x17826000 0x0 0x1000>;
+			clocks = <&sleep_clk>;
+			interrupts = <GIC_ESPI 848 IRQ_TYPE_EDGE_RISING>;
+		};
 	};
 };
