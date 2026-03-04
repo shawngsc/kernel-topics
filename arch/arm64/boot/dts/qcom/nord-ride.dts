@@ -12,7 +12,6 @@
 	compatible = "qcom,nord-ride", "qcom,nord";
 
 	aliases {
-		scmichannels = &scmichannels;
 		serial0 = &uart15;
 		serial1 = &uart4;
 	};
@@ -34,6 +33,10 @@
 			#clock-cells = <0>;
 		};
 	};
+};
+
+&pdp_scmi {
+	status = "okay";
 };
 
 &qupv3_0 {
