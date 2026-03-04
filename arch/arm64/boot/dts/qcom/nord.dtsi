@@ -826,11 +826,6 @@
 			no-map;
 		};
 
-		scmi_mem: scmi-region@d7600000 {
-			reg = <0x0 0xd7600000 0x0 0x40000>;
-			no-map;
-		};
-
 		firmware_logs_mem: firmware-logs-region@d7640000 {
 			reg = <0x0 0xd7640000 0x0 0x10000>;
 			no-map;
