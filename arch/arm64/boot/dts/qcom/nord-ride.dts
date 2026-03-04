@@ -35,10 +35,6 @@
 	};
 };
 
-&pdp_scmi {
-	status = "okay";
-};
-
 &qupv3_0 {
 	status = "okay";
 };
