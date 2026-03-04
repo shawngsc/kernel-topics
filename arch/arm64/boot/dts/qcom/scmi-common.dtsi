@@ -1883,12 +1883,6 @@
 			reg = <0x13>;
 			#clock-cells = <1>;
 		};
-
-		vendor_pdp: protocol@80 {
-			reg = <0x80>;
-			#clock-cells = <1>;
-		};
-
 	};
 
 	cpucp_scmi: scmi-65 {
