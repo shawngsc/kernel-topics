@@ -45,12 +45,14 @@
 	};
 
 	qupv3_2: geniqup@8c0000 {
+		compatible = "qcom,geni-se-qup";
 		clocks = <&negcc NE_GCC_QUPV3_WRAP2_M_AHB_CLK>,
 			 <&negcc NE_GCC_QUPV3_WRAP2_S_AHB_CLK>;
 		clock-names = "m-ahb",
 			      "s-ahb";
 
 		uart15: serial@884000 {
+			compatible = "qcom,geni-debug-uart";
 			clocks = <&negcc NE_GCC_QUPV3_WRAP2_S0_CLK>;
 			clock-names = "se";
 			interconnects = <&clk_virt MASTER_QUP_CORE_2 QCOM_ICC_TAG_ALWAYS
