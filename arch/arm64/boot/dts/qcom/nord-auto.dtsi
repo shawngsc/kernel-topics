@@ -481,11 +481,6 @@
 	};
 };
 
-&pdp_ns_mem {
-    reg = <0x0 0x87600000 0x0 0x8000>,
-          <0x0 0x87609000 0x0 0x1F7000>;
-};
-
 &soc {
 	qupv3_2: geniqup@8c0000 {
 		compatible = "qcom,nord-auto-geni-se-qup",
