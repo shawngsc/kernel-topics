@@ -3523,7 +3523,6 @@
 		ranges = <0 0 0 0 0x10 0>;
 
 		qupv3_2: geniqup@8c0000 {
-			compatible = "qcom,geni-se-qup";
 			reg = <0x0 0x008c0000 0x0 0x2000>;
 			#address-cells = <2>;
 			#size-cells = <2>;
@@ -3532,14 +3531,12 @@
 			status = "disabled";
 
 			uart15: serial@884000 {
-				compatible = "qcom,geni-debug-uart";
 				reg = <0x0 0x00884000 0x0 0x4000>;
 				interrupts = <GIC_SPI 583 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart17: serial@88c000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x0088c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
@@ -3547,7 +3544,6 @@
 		};
 
 		qupv3_0: geniqup@9c0000 {
-			compatible = "qcom,geni-se-qup";
 			reg = <0x0 0x009c0000 0x0 0x2000>;
 			#address-cells = <2>;
 			#size-cells = <2>;
@@ -3556,28 +3552,24 @@
 			status = "disabled";
 
 			uart0: serial@980000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00980000 0x0 0x4000>;
 				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart3: serial@98c000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x0098c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart4: serial@990000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00990000 0x0 0x4000>;
 				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart5: serial@994000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00994000 0x0 0x4000>;
 				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
@@ -3585,7 +3577,6 @@
 		};
 
 		qupv3_1: geniqup@ac0000 {
-			compatible = "qcom,geni-se-qup";
 			reg = <0x0 0x00ac0000 0x0 0x2000>;
 			#address-cells = <2>;
 			#size-cells = <2>;
@@ -3594,21 +3585,18 @@
 			status = "disabled";
 
 			uart9: serial@a88000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00a88000 0x0 0x4000>;
 				interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart10: serial@a8c000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00a8c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
 			};
 
 			uart12: serial@a94000 {
-				compatible = "qcom,geni-uart";
 				reg = <0x0 0x00a94000 0x0 0x4000>;
 				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
@@ -3621,9 +3609,6 @@
 		};
 
 		ufshc_mem_hc: ufshc@1d44000 {
-			compatible = "qcom,nord-ufshc",
-				     "qcom,ufshc",
-				     "jedec,ufs-2.0";
 			reg = <0x0 0x01d44000 0x0 0x3000>;
 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 			lanes-per-direction = <1>;
