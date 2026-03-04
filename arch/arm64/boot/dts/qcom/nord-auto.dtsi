@@ -83,8 +83,6 @@
 	};
 
 	reserved-memory{
-		/delete-node/ scmi-region@d7600000;
-
 		shmem0: scmi-shmem@d7600000 {
 			compatible = "arm,scmi-shmem";
 			reg = <0x0 0xd7600000 0x0 0x1000>;
