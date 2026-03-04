@@ -82,7 +82,19 @@
 
 	};
 
-	reserved-memory{
+	reserved-memory {
+		pdp0_p2a: scmi-shmem@87608000 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x87608000 0x0 0x80>;
+			no-map;
+		};
+
+		pdp0_a2p: scmi-shmem@87060180 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x87608180 0x0 0x80>;
+			no-map;
+		};
+
 		shmem0: scmi-shmem@d7600000 {
 			compatible = "arm,scmi-shmem";
 			reg = <0x0 0xd7600000 0x0 0x1000>;
@@ -464,18 +476,6 @@
 		shmem63: scmi-shmem@d763f000 {
 			compatible = "arm,scmi-shmem";
 			reg = <0x0 0xd763f000 0x0 0x1000>;
-			no-map;
-		};
-
-		pdp0_p2a: scmi-shmem@87608000 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x0 0x87608000 0x0 0x80>;
-			no-map;
-		};
-
-		pdp0_a2p: scmi-shmem@87060180 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x0 0x87608180 0x0 0x80>;
 			no-map;
 		};
 	};
