@@ -315,9 +315,9 @@
 				min-residency-us = <9144>;
 			};
 
-			apss_off: cluster-sleep-1 {
+			domain_ss3: domain-sleep-0 {
 				compatible = "domain-idle-state";
-				arm,psci-suspend-param = <0x0200C353>;
+				arm,psci-suspend-param = <0x0200c353>;
 				entry-latency-us = <2800>;
 				exit-latency-us = <4400>;
 				min-residency-us = <10150>;
@@ -463,7 +463,7 @@
 
 		system_pd: power-domain-system {
 			#power-domain-cells = <0>;
-			domain-idle-states = <&apss_off>;
+			domain-idle-states = <&domain_ss3>;
 		};
 	};
 
