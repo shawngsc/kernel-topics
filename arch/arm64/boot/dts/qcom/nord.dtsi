@@ -856,6 +856,7 @@
 	firmware {
 		scm {
 			compatible = "qcom,scm-nord", "qcom,scm";
+			qcom,dload-mode = <&tcsr 0x79000>;
 		};
 	};
 
@@ -3620,6 +3621,11 @@
 			compatible = "qcom,tcsr-mutex";
 			reg = <0x0 0x01f40000 0x0 0x20000>;
 			#hwlock-cells = <1>;
+		};
+
+		tcsr: syscon@1f60000 {
+			compatible = "qcom,nord-tcsr", "syscon";
+			reg = <0x0 0x01f60000 0x0 0xa0000>;
 		};
 
 		adreno_smmu_0: iommu@3da0000 {
