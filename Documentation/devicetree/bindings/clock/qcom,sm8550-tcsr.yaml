@@ -28,7 +28,7 @@ properties:
           - qcom,glymur-tcsr
           - qcom,kaanapali-tcsr
           - qcom,milos-tcsr
-          - qcom,nord-tcsr
+          - qcom,nord-tcsrcc
           - qcom,sar2130p-tcsr
           - qcom,sm8550-tcsr
           - qcom,sm8650-tcsr
