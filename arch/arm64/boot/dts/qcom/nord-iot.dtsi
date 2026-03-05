@@ -196,45 +196,6 @@
 		#power-domain-cells = <1>;
 	};
 
-	pdc: interrupt-controller@b220000 {
-		compatible = "qcom,nord-pdc", "qcom,pdc";
-		reg = <0x0 0x0b220000 0x0 0x10000>;
-		qcom,pdc-ranges = <0 745 43>, <67 543 31>,
-				 <98 609 32>, <130 717 12>,
-				 <142 251 5>, <147 796 16>;
-		#interrupt-cells = <2>;
-		interrupt-parent = <&intc>;
-		interrupt-controller;
-	};
-
-	tlmm: pinctrl@f100000 {
-		compatible = "qcom,nord-tlmm";
-		reg = <0x0 0x0f100000 0x0 0xc0000>;
-		interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH>;
-		gpio-controller;
-		#gpio-cells = <2>;
-		interrupt-controller;
-		#interrupt-cells = <2>;
-		gpio-ranges = <&tlmm 0 0 181>;
-		wakeup-parent = <&pdc>;
-
-		qup_uart15_default: qup-uart15-default-state {
-			qup_uart15_tx: qup-uart15-tx-pins {
-				pins = "gpio147";
-				function = "qup2_se2_l2";
-				drive-strength = <2>;
-				bias-disable;
-			};
-
-			qup_uart15_rx: qup-uart15-rx-pins {
-				pins = "gpio148";
-				function = "qup2_se2_l3";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-	};
-
 	tcsrcc: clock-controller@f1d9000 {
 		compatible = "qcom,nord-tcsrcc", "syscon";
 		reg = <0x0 0x0f1d9000 0x0 0xf00c>;
