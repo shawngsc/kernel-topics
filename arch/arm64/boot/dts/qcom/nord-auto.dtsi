@@ -82,6 +82,25 @@
 
 	};
 
+	firmware {
+		pdp_scmi: scmi-64 {
+			compatible = "arm,scmi";
+			mboxes = <&pdp_mbox0 0>, <&pdp_mbox0 11>, <&pdp_mbox0 1>;
+			mbox-names = "tx", "tx_reply", "rx";
+			shmem = <&pdp0_a2p>, <&pdp0_p2a>;
+
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+
+			cpu_perf: protocol@13 {
+				reg = <0x13>;
+				#clock-cells = <1>;
+			};
+		};
+	};
+
 	reserved-memory {
 		pdp0_p2a: scmi-shmem@87608000 {
 			compatible = "arm,scmi-shmem";
