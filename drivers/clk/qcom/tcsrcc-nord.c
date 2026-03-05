@@ -314,7 +314,7 @@ static const struct qcom_cc_desc tcsr_cc_nord_desc = {
 };
 
 static const struct of_device_id tcsr_cc_nord_match_table[] = {
-	{ .compatible = "qcom,nord-tcsr" },
+	{ .compatible = "qcom,nord-tcsrcc" },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, tcsr_cc_nord_match_table);
