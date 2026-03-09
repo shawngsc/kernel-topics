@@ -309,6 +309,6 @@
 	status = "okay";
 };
 
-&ufshc_mem_hc {
+&ufs_mem_hc {
 	status = "okay";
 };
