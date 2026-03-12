@@ -174,6 +174,10 @@
 		compatible = "qcom,nord-ufshc",
 			     "qcom,ufshc",
 			     "jedec,ufs-2.0";
+		reg = <0x0 0x01d44000 0x0 0x3000>,
+		      <0x0 0x01d60000 0x0 0x15000>;
+		reg-names = "std",
+			    "mcq";
 
 		clocks = <&negcc NE_GCC_UFS_PHY_AXI_CLK>,
 			 <&negcc NE_GCC_AGGRE_NOC_UFS_PHY_AXI_CLK>,
