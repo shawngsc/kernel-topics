@@ -5,7 +5,7 @@
 
 /dts-v1/;
 
-#include "lemans.dtsi"
+#include "lemans-iq9.dtsi"
 
 /delete-node/ &pil_camera_mem;
 /delete-node/ &pil_adsp_mem;
