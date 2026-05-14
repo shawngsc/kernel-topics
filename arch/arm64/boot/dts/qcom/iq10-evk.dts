@@ -514,6 +514,13 @@
 	};
 };
 
+&remoteproc_adsp {
+	firmware-name = "qcom/iq10/adsp.mbn",
+			"qcom/iq10/adsp_dtbs.elf";
+
+	status = "okay";
+};
+
 &uart15 {
 	status = "okay";
 };
